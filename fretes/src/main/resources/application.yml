@@ -1,0 +1,33 @@
+micronaut:
+  application:
+    name: freteRest
+  server:
+    netty:
+      access-logger:
+        enabled: true # Enables the access logger
+        logger-name: my-access-logger # A logger name, optional, default is `HTTP_ACCESS_LOGGER`
+        log-format: common # A log format, optional, default is Common Log Format
+
+grpc:
+  client:
+    plaintext: true
+    max-retry-attempts: 10
+  channels:
+    fretes:
+      address: 'localhost:50059'
+      plaintext: true
+      max-retry-attempts: 10
+
+#Endpoints http
+endpoints:
+  all:
+    port: 8081
+    sensitive: true
+  health:
+    enabled: true
+    sensitive: false
+    details-visible: 'ANONYMOUS'
+    status:
+      http-mapping:
+
+
