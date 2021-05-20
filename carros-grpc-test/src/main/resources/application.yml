@@ -1,0 +1,12 @@
+micronaut:
+  application:
+    name: carrosGrpc
+
+datasources:
+  default:
+    url: jdbc:mysql://localhost:3306/carro_teste?createDatabaseIfNotExist=true
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    dialect: MYSQL
+jpa.default.properties.hibernate.hbm2ddl.auto: update
